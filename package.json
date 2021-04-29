@@ -1,0 +1,31 @@
+{
+  "name": "node_item_manager_graphql_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CameronRDowner/Node_Item_Manager_GraphQL_API.git"
+  },
+  "author": "Cameron Downer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CameronRDowner/Node_Item_Manager_GraphQL_API/issues"
+  },
+  "homepage": "https://github.com/CameronRDowner/Node_Item_Manager_GraphQL_API#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
