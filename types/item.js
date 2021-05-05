@@ -30,8 +30,8 @@ type RootQuery {
 
 type RootMutation {
   createItem(input: itemInput!): Item
-  updateUser(id: ID!, input: UserInput!): User
-  removeUser(id: ID!): User
+  updateItem(id: ID!, input: itemInput!): Item
+  removeItem(id: ID!): Item
   createProject(input: ProjectInput!): Project
   updateProject(id: ID!, input: ProjectInput!): Project
   removeProject(id: ID!): Project
