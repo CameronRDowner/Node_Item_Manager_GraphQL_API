@@ -9,6 +9,10 @@ const db = mongoose.connection;
 db.on('error', (error) => console.log(error));
 db.once('open', () => console.log('connected to db'));
 
-app.use(express.json());
+const schema = makeExecutableSchema({
+    types,
+    resolvers: resolvers()
+});
+app.use('/graphql', graphqlExpress({ schema }));
 
 app.listen(3000, () => console.log('server started'));
