@@ -13,12 +13,17 @@ input ItemInput {
     price: String
     salePrice: Number
     thumbnail: String
-    photos: [Photo]
 }
 
 type Photo {
+    _id: ID,
     url: String,
     mainPhoto: Boolean
+}
+
+input PhotoInput {
+  url: String
+  mainPhoto: Boolean
 }
 
 type RootQuery {
@@ -32,15 +37,11 @@ type RootMutation {
   createItem(input: itemInput!): Item
   updateItem(id: ID!, input: itemInput!): Item
   removeItem(id: ID!): Item
-  createProject(input: ProjectInput!): Project
-  updateProject(id: ID!, input: ProjectInput!): Project
-  removeProject(id: ID!): Project
-  createTask(input: TaskInput!): Task
-  updateTask(id: ID!, input: TaskInput!): Task
-  removeTask(id: ID!): Task
+  createPhoto(input: PhotoInput!): Photo
+  updatePhoto(id: ID!, input: PhotoInput!): Photo
+  removePhoto(id: ID!): Photo
 }
-# We need to tell the server which types represent the root query.
-# We call them RootQuery and RootMutation by convention.
+
 schema {
   query: RootQuery
   mutation: RootMutation

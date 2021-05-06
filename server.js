@@ -1,3 +1,5 @@
+import typeDefinitions from './typeDefinitions';
+
 require('dotenv').config();
 
 const express = require('express');
@@ -10,7 +12,7 @@ db.on('error', (error) => console.log(error));
 db.once('open', () => console.log('connected to db'));
 
 const schema = makeExecutableSchema({
-    types,
+    typeDefinitions,
     resolvers: resolvers()
 });
 app.use('/graphql', graphqlExpress({ schema }));
