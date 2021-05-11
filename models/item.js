@@ -1,11 +1,5 @@
 const mongoose = require('mongoose');
-
-class Photo {
-    constructor(input){
-        this.url = input.url ? input.url : null;
-        this.mainPhoto = input.mainPhoto ? input.mainPhoto : false;
-    }
-}
+const { PhotoSchema } = require('./photo');
 
 const itemSchema = new mongoose.Schema({
     name: {
@@ -23,7 +17,7 @@ const itemSchema = new mongoose.Schema({
         type: String
     },
     photos: {
-        type: [Photo]
+        type: [PhotoSchema]
     }
 });
 

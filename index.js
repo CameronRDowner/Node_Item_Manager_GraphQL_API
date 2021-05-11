@@ -1,6 +1,10 @@
-import typeDefinitions from './typeDefinitions';
-
 require('dotenv').config();
+
+import graphqlExpress from 'apollo-server-express';
+import { makeExecutableSchema } from 'graphql-tools';
+
+import typeDefinitions from './typeDefinitions.js';
+import resolvers from './resolvers.js';
 
 const express = require('express');
 const app = express();
