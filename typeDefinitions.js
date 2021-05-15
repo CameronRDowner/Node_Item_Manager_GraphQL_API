@@ -1,9 +1,11 @@
-const typeDefinitions = `
+const { gql } = require('apollo-server-express');
+
+const typeDefinitions = gql`
 type Item {
     _id: ID
     name: String
-    price: Number
-    salePrice: Number
+    price: Float
+    salePrice: Float
     thumbnail: String
     photos: [Photo]
 }
@@ -11,7 +13,7 @@ type Item {
 input ItemInput {
     name: String
     price: String
-    salePrice: Number
+    salePrice: Float
     thumbnail: String
 }
 
@@ -34,8 +36,8 @@ type RootQuery {
 }
 
 type RootMutation {
-  createItem(input: itemInput!): Item
-  updateItem(id: ID!, input: itemInput!): Item
+  createItem(input: ItemInput!): Item
+  updateItem(id: ID!, input: ItemInput!): Item
   removeItem(id: ID!): Item
   createPhoto(input: PhotoInput!): Photo
   updatePhoto(id: ID!, input: PhotoInput!): Photo
@@ -48,4 +50,4 @@ schema {
 }
 `;
 
-export default typeDefinitions;
+module.exports =  typeDefinitions;

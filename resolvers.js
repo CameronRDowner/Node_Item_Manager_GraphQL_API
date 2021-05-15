@@ -1,5 +1,5 @@
   
-export default function resolvers () {
+module.exports = function resolvers () {
     const Item = require('./models/item');
 
   return {
