@@ -12,7 +12,7 @@ type Item {
 
 input ItemInput {
     name: String
-    price: String
+    price: Float
     salePrice: Float
     thumbnail: String
 }
