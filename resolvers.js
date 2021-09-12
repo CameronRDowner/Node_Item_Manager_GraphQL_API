@@ -1,21 +1,19 @@
 const Item = require('./models/item');
 module.exports = resolvers = {
     RootQuery: {
-      item (root, { id }, context) {
+      item (root, { id }) {
         return Item.findById(id);
       },
-      items: (root, args, context) => {
-        //return Item.find();
-        return new Array()''
+      items: () => {
+        return Item.find();
       },
       photo (root, { id }, context) {
         return 
       }
     },
     RootMutation: {
-      createItem (_, {input}, {headers}) {
-        console.log(input)
-        return input
+      createItem (_, {input}) {
+        return Item.create(input)
       }
     }
 }
