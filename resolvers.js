@@ -1,19 +1,22 @@
 const Item = require('./models/item');
 module.exports = resolvers = {
     RootQuery: {
-      item (root, { id }) {
-        return Item.findById(id);
+      item: async (_, { id }) => {
+        return await Item.findById(id);
       },
-      items: () => {
-        return Item.find();
+      items: async () => {
+        return await Item.find();
       },
-      photo (root, { id }, context) {
-        return 
-      }
     },
     RootMutation: {
-      createItem (_, {input}) {
-        return Item.create(input)
+      createItem: async (_, {input}) => {
+        return await Item.create(input);
+      },
+      updateItem: async (_, {input}) => {
+        return await Item.findByIdAndUpdate(input.id, input);
+      },
+      deleteItem: async (_, { id }) => {
+        return await Item.findByIdAndDelete(id);
       }
     }
 }

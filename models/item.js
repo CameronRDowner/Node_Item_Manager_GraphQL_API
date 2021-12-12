@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { PhotoSchema } = require('./photo');
 
 const itemSchema = new mongoose.Schema({
     name: {
@@ -16,9 +15,6 @@ const itemSchema = new mongoose.Schema({
     thumbnail: {
         type: String
     },
-    photos: {
-        type: [PhotoSchema]
-    }
 });
 
 module.exports = mongoose.model('Item', itemSchema);
